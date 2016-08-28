@@ -6,6 +6,11 @@ body {
     color: #262626;
 }
 
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.ttf');
+}
+
 /*  COLOR PALETTE
 ===================================== */
 
@@ -151,8 +156,27 @@ hr {
     text-decoration: none;
 }
 
+.footer a:first-of-type {
+    border-bottom: 1px solid #3ac162;
+}
+
 .footer a:hover {
     color: #3ac162;
+}
+
+#github {
+    color: #ececee;
+    font-size: .9em;
+    margin-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#github:after {
+    font-family: 'icomoon';
+    font-size: 1.6em;
+    content: "\eab0";
+    margin-left: 15px;
 }
 
 footer {
