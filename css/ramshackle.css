@@ -1,0 +1,468 @@
+
+/*
+Ramshackle v0.9.4
+Copyright 2016, Daniel Strong
+www.getramshackle.com
+Free to use under the MIT license.
+8/2/2016
+*/
+
+/*  TABLE OF CONTENTS
+==================================
+
+- Blanket Settings
+- Outlines for Troubleshooting
+- The Grid
+- Positioning
+- Default Element Styling
+- Type Styling
+- Buttons
+- Forms & Inputs
+- Code
+- Lists
+- Misc Tools
+- Clearfix
+- Media Queries
+
+================================ */
+
+/*  BLANKET SETTINGS
+================================ */
+
+*, *:before, *:after { box-sizing: border-box; }
+
+/*  OUTLINES FOR TROUBLESHOOTING
+================================== */
+
+/*.grid-container { outline: 1px solid green; }
+.row { outline: 1px solid blue; }
+.col { outline: 1px solid red; }*/
+
+/*  THE GRID
+================================== */
+
+.hero {
+    width: 100vw;
+    max-width: 100%;
+    height: 100vh;
+    /*background-image: url('../img/');*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.main-container {
+    position: relative;
+    width: 100%;
+    padding: 50px 0;
+    margin: 0 auto;
+}
+
+.grid-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    text-align: left;
+    padding: 0 1%;
+    margin: 0 auto;
+}
+
+.row {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 2% 0;
+}
+
+.col {
+    float: left;
+    width: 100%;
+    text-align: left;
+    vertical-align: top;
+    padding: 25px;
+    margin: 0 2% 0 0;
+}
+
+/* Use this if you want to turn a column into a row */
+.col-row {
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.row:first-of-type { margin-top: 0; }
+.col:first-child { margin-left: 0; }
+.col:last-child { margin-right: 0; }
+
+/*  POSITIONING
+================================== */
+
+/* Use 'center' on a row to align its columns */
+.row.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.row.center .col {
+    float: none;
+    display: inline-block;
+}
+
+/* Use 'center' on a column to align its content */
+div.center {
+    text-align: center;
+}
+
+/* Use 'left' on a row to align its columns */
+.left .col {
+    float: left;
+}
+
+/* Use 'left' on a column to align its content */
+.left {
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+}
+.left * {
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+/* Use 'pull-left' on an element to float it left */
+.pull-left {
+    float: left;
+}
+
+/* Use 'right' on a row to align its columns */
+.right .col {
+    float: right;
+}
+
+/* Use 'right' on a column to align its content */
+.right {
+    text-align: right;
+    margin-right: 0;
+    margin-left: auto;
+}
+.right * {
+    text-align: right;
+    margin-right: 0;
+    margin-left: auto;
+}
+
+/* Use 'pull-right' on an element to float it right */
+.pull-right {
+    float: right;
+}
+
+/*  DEFAULT ELEMENT STYLING
+================================== */
+
+body {
+    font-size: 1em;
+    line-height: 1.7em;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/*  TYPE STYLING
+================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    line-height: 1.3em;
+    margin: 0 0 .4em 0;
+}
+
+h1 { font-size: 3.8em; }
+h2 { font-size: 3.3em; }
+h3 { font-size: 2.8em; }
+h4 { font-size: 2.3em; }
+h5 { font-size: 1.8em; }
+h6 { font-size: 1.3em; }
+
+/*  BUTTONS
+================================== */
+
+.btn {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    font-size: .8em;
+    letter-spacing: .22em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    padding: 12px 36px;
+    margin: 5px 0;
+}
+
+.btn:hover:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.05);
+}
+
+.btn-fancy {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    font-size: .85em;
+    letter-spacing: .25em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    outline: 0;
+    box-shadow: 0 0 15px rgba(0,0,0,.22);
+    padding: 17px 45px;
+    margin: 5px;
+}
+
+.btn-fancy:hover {
+    -webkit-animation: pulse 1s ease-out infinite;
+            animation: pulse 1s ease-out infinite;
+    box-shadow: 0 0 10px rgba(255,255,255, .5) inset;
+}
+
+@-webkit-keyframes pulse {
+    40% { color: rgba(255,255,255,.2); }
+}
+
+@keyframes pulse {
+    40% { color: rgba(255,255,255,.2); }
+}
+
+/*  FORMS & INPUTS
+================================== */
+
+input[type='email'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='url'],
+textarea,
+select,
+option {
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    box-shadow: none;
+    font-size: 1em;
+    background-color: #fafafa;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    margin: 3px 0 0 0;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+    margin-right: 15px;
+}
+
+label {
+    font-weight: 600;
+    letter-spacing: -1px;
+    cursor: default;
+    margin-left: 2px;
+}
+
+textarea {
+    min-height: 100px;
+    max-height: 600px;
+    padding: 10px;
+}
+
+/*  CODE
+================================== */
+
+code {
+    display: inline-block;
+    font-size: 90%;
+    color: #000;
+    white-space: normal;
+    background-color: #dedede;
+    border-radius: 4px;
+    padding: .1em .6em;
+    margin: .1em 0;
+}
+
+pre > code {
+    display: inline-block;
+    word-wrap: break-word;
+    padding: 1em;
+}
+
+/*  LISTS
+================================== */
+
+ul { list-style: circle; }
+ol { list-style: decimal; }
+
+li {
+    margin-bottom: .75em;
+    padding-left: .75em;
+}
+
+/*  MISC TOOLS
+================================== */
+
+/* These give elements some vertical room to breathe */
+.v-25 {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.v-50 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* These give elements some horizontal room to stretch */
+.h-25 {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.h-50 {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+/* These tighten things up a bit */
+.flush {
+    padding: 0;
+}
+
+.v-flush,
+.v-flush .col {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.h-flush,
+.h-flush .col {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/*  CLEARFIX
+================================ */
+
+.clearfix,
+.main-container,
+.grid-container,
+.large-container,
+.row {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/*  MEDIA QUERY BREAKPOINTS
+================================== */
+
+/* For screens larger than 768px wide */
+@media (min-width: 769px) {
+    .one { width: 8.2%; }
+    .two { width: 18.4%; }
+    .three { width: 28.6%; }
+    .four { width: 38.8%; }
+    .five { width: 49%; }
+    .six { width: 59.2%; }
+    .seven { width: 69.4%; }
+    .eight { width: 79.6%; }
+    .nine { width: 89.8%; }
+    .ten { width: 100%; margin-left: 0; margin-right: 0; }
+
+    .quarter, .one-quarter { width: 23.5%; }
+    .third, .one-third { width: 32%; }
+    .half, .one-half { width: 49%; }
+    .two-thirds { width: 66%; }
+    .three-quarters { width: 74.5%; }
+    .full { width: 100%; margin-left: 0; margin-right: 0; }
+}
+
+/* For screens smaller than 768px wide */
+@media (min-width: 481px) and (max-width: 768px) {
+    .grid-container { width: 98%; }
+    .row { margin: 0 auto; }
+    .col-row {
+        padding: 25px;
+        margin: 0 auto;
+    }
+    .col { margin: 1% auto; }
+    h1 { font-size: 3.6em; }
+    h2 { font-size: 3.1em; }
+    h3 { font-size: 2.6em; }
+    h4 { font-size: 2.1em; }
+    h5 { font-size: 1.6em; }
+    h6 { font-size: 1.1em; }
+    input[type='email'],
+    input[type='number'],
+    input[type='password'],
+    input[type='search'],
+    input[type='tel'],
+    input[type='text'],
+    input[type='url'],
+    textarea,
+    select,
+    option { width: 100%; }
+}
+
+/* For screens smaller than 480px wide */
+@media (max-width: 480px) {
+    .grid-container {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .row { margin: 0 auto; }
+    .col-row {
+        padding: 25px;
+        margin: 0 auto;
+    }
+    .col { margin: 1% auto; }
+    h1 { font-size: 3.4em; }
+    h2 { font-size: 2.9em; }
+    h3 { font-size: 2.4em; }
+    h4 { font-size: 2em; }
+    h5 { font-size: 1.4em; }
+    h6 { font-size: 1em; }
+    input[type='email'],
+    input[type='number'],
+    input[type='password'],
+    input[type='search'],
+    input[type='tel'],
+    input[type='text'],
+    input[type='url'],
+    textarea,
+    select,
+    option { width: 100%; }
+}

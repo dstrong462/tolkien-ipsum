@@ -1,0 +1,212 @@
+/*  FONT DECLARATIONS
+===================================== */
+
+body {
+    font-family: 'Open Sans', 'Helvetica', 'Arial', 'sans-serif';
+    color: #262626;
+}
+
+/*  COLOR PALETTE
+===================================== */
+
+/* These control your TEXT colors */
+body { color: #353535; }
+.dark { color: #262626; }
+.light { color: #ececee; }
+.primary { color: #289784; }
+.secondary { color: #3ac162; }
+.accent { color: #ffcb05; }
+
+/* These control your BACKGROUND colors */
+body { background-color: #353535; }
+.bg-dark { background-color: #353535; }
+.bg-light { background-color: #ececee; }
+.bg-primary { background-color: #289784; }
+.bg-secondary { background-color: #3ac162; }
+.bg-accent { background-color: #ffcb05; }
+
+/*  BASE STYLES
+===================================== */
+
+button {
+    cursor: pointer;
+}
+
+label,
+output {
+    font-weight: inherit;
+    letter-spacing: 1px;
+    margin-left: 20px;
+}
+
+label {
+    margin-left: 50px;
+}
+
+input[type='number'],
+input[type='range'] {
+    width: auto;
+    margin-left: 10px;
+}
+
+input[type='number']:focus {
+    outline-color: #3ac162;
+}
+
+input[type='range'] {
+    vertical-align: middle;
+}
+
+hr {
+    width: 100%;
+    height: 2px;
+    background-color: #ffcb05;
+    border: none;
+    margin: 30px auto 0 auto;
+}
+
+/*  HERO
+===================================== */
+
+.hero {
+    position: relative;
+    width: 100vw;
+    max-width: 100%;
+    height: auto;
+    background-image: url('../img/middle-earth-map.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left center;
+    border-bottom: 2px solid #ececee;
+    padding: 60px 0;
+    margin: 0 auto;
+}
+
+.hero:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 100px 40px rgba(0,0,0,.6);
+    content: '';
+    z-index: 5;
+}
+
+.hero img {
+    width: 85%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/*  IPSUM OUTPUT
+===================================== */
+
+.output {
+    float: none;
+    max-width: 1000px;
+    font-size: .9em;
+    border-radius: 4px;
+    padding: 40px;
+    padding-bottom: 80px;
+    margin: 100px auto 0 auto;
+}
+
+.output div {
+    display: inline-block;
+}
+
+#generate {
+    font-size: .95em;
+}
+
+#insert {
+    margin-top: 30px;
+    margin-bottom: 0;
+    word-break: keep-all;
+}
+
+/*  FOOTER AREA
+===================================== */
+
+.footer {
+    color: #ececee;
+    font-size: .95em;
+    text-align: center;
+    background-image: url('../img/tree_of_gondor.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 100px 0;
+    margin: 100px auto;
+}
+
+.footer hr {
+    width: 70px;
+    margin: 20px auto;
+}
+
+.footer a {
+    color: #ececee;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #3ac162;
+}
+
+footer {
+    position: relative;
+    width: 100vw;
+    max-width: 100%;
+    height: auto;
+    background-image: url('../img/middle-earth-map.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-top: 2px solid #ececee;
+    padding: 60px 0;
+    margin: 0 auto;
+}
+
+footer:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 100px 40px rgba(0,0,0,.6);
+    content: '';
+    z-index: 5;
+}
+
+/*  MEDIA QUERIES
+===================================== */
+
+@media (max-width: 950px) {
+    .output div,
+    #generate,
+    label {
+        display: block;
+        text-align: center;
+        margin: 25px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 30px 0;
+    }
+    .hero::after {
+    box-shadow: inset 0 0 50px rgba(0,0,0,.6);
+    }
+    .output {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    output {
+        display: block;
+        text-align: center;
+        margin: 5px auto;
+    }
+}
