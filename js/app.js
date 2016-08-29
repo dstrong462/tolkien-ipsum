@@ -103,7 +103,7 @@ function generateIpsum() {
         document.getElementById('insert').innerHTML = ipsum;
     }
     else {
-        console.log("hell no");
+
     }
 };
 
@@ -140,12 +140,15 @@ function randomNumber(min, max) {
 
 // Adds red outline to paragraph input if value is too high
 function tooMany(value) {
+    var errorMessage = document.getElementById('input-p-error');
     var paragraphInput = document.getElementById('input-paragraphs');
     if (paragraphInput.value > maxParagraphs) {
         paragraphInput.classList.add('error');
+        errorMessage.style.opacity = '1';
     }
     else {
         paragraphInput.classList.remove('error');
+        errorMessage.style.opacity = '0';
     }
 }
 

@@ -115,7 +115,7 @@ hr {
     border-radius: 4px;
     padding: 40px;
     padding-bottom: 80px;
-    margin: 100px auto 0 auto;
+    margin: 0 auto;
 }
 
 .output div {
@@ -124,6 +124,20 @@ hr {
 
 #generate {
     font-size: .95em;
+}
+
+#input-p-error {
+    opacity: 0;
+    transition: opacity .33s;
+    width: 100%;
+    max-width: 1000px;
+    color: rgba(255,255,255,.69);
+    text-align: center;
+    letter-spacing: 1px;
+    background-color: #EF4B57;
+    border-radius: 4px;
+    padding: 15px 0;
+    margin: 15px auto;
 }
 
 .error {
