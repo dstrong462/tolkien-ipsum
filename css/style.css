@@ -50,12 +50,12 @@ label {
 
 input[type='number'],
 input[type='range'] {
-    width: auto;
+    width: 100px;
     margin-left: 10px;
 }
 
 input[type='number']:focus {
-    outline-color: #3ac162;
+    outline: 1px solid #3ac162;
 }
 
 input[type='range'] {
@@ -128,6 +128,7 @@ hr {
 
 #input-p-error {
     opacity: 0;
+    -webkit-transition: opacity .33s;
     transition: opacity .33s;
     cursor: default;
     width: 100%;
@@ -243,6 +244,9 @@ footer:after {
     }
     .hero::after {
     box-shadow: inset 0 0 50px rgba(0,0,0,.6);
+    }
+    #input-p-error {
+        font-size: .9em;
     }
     .output {
         padding-left: 10%;
