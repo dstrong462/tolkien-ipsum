@@ -101,6 +101,7 @@ hr {
 .hero img {
     width: 85%;
     max-width: 500px;
+    max-height: 50vh;
     margin: 0 auto;
 }
 
@@ -123,6 +124,10 @@ hr {
 
 #generate {
     font-size: .95em;
+}
+
+.error {
+    outline: 2px solid #E31E30;
 }
 
 #insert {

@@ -1,5 +1,7 @@
 // Default settings for generator
 var paragraphs = 3;
+var maxParagraphs = 10;
+    document.getElementById('input-paragraphs').max = maxParagraphs;
 var sentences = { min: 6, max: 10 };
 var words = { min: 5, max: 10 };
 
@@ -87,17 +89,22 @@ var generate = document.getElementById('generate');
 
 // Generate new ipsum text
 function generateIpsum() {
-    ipsum = 'Tolkien ipsum ';
-    paragraphs = document.getElementById('input-paragraphs').value;
-    for (var i = 0; i < paragraphs; i++) {
-        numberOfSentences = randomNumber(sentences.min, sentences.max);
-        buildParagraph(numberOfSentences);
-        if (i === 0) {
-            paragraph = paragraph.charAt(0).toLowerCase() + paragraph.slice(1);
+    if (document.getElementById('input-paragraphs').value <= maxParagraphs) {
+        ipsum = 'Tolkien ipsum ';
+        paragraphs = document.getElementById('input-paragraphs').value;
+        for (var i = 0; i < paragraphs; i++) {
+            numberOfSentences = randomNumber(sentences.min, sentences.max);
+            buildParagraph(numberOfSentences);
+            if (i === 0) {
+                paragraph = paragraph.charAt(0).toLowerCase() + paragraph.slice(1);
+            }
+            ipsum += paragraph + '<br /><br />';
         }
-        ipsum += paragraph + '<br /><br />';
+        document.getElementById('insert').innerHTML = ipsum;
     }
-    document.getElementById('insert').innerHTML = ipsum;
+    else {
+        console.log("hell no");
+    }
 };
 
 generateIpsum();
@@ -129,6 +136,18 @@ function buildSentence(numberOfWords) {
 function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 };
+
+
+// Adds red outline to paragraph input if value is too high
+function tooMany(value) {
+    var paragraphInput = document.getElementById('input-paragraphs');
+    if (paragraphInput.value > maxParagraphs) {
+        paragraphInput.classList.add('error');
+    }
+    else {
+        paragraphInput.classList.remove('error');
+    }
+}
 
 
 // Updates slider text and variables on movement
