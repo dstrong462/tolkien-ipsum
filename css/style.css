@@ -129,6 +129,7 @@ hr {
 #input-p-error {
     opacity: 0;
     transition: opacity .33s;
+    cursor: default;
     width: 100%;
     max-width: 1000px;
     color: rgba(255,255,255,.69);
