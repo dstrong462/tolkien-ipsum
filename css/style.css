@@ -48,7 +48,11 @@ label {
     margin-left: 50px;
 }
 
-input[type='number'],
+input[type='number'] {
+    width: 75px;
+    margin-left: 10px;
+}
+
 input[type='range'] {
     width: 100px;
     margin-left: 10px;
@@ -123,7 +127,22 @@ hr {
 }
 
 #generate {
+    height: 50px;
+    vertical-align: middle;
     font-size: .95em;
+    padding: 0 35px;
+}
+
+#copy {
+    height: 50px;
+    vertical-align: middle;
+    font-size: 1.5em;
+    padding: 0 15px;
+}
+
+#copy:after {
+    font-family: 'icomoon';
+    content: "\e9b8";
 }
 
 #input-p-error {

@@ -26,7 +26,10 @@
 <div id="input-p-error">The max number of paragraphs is 10</div>
 
 <div class="col full output bg-light">
-    <button id="generate" class="btn bg-secondary">Generate</button>
+    <div>
+        <button id="generate" class="btn bg-secondary">Generate</button>
+        <button id="copy" class="btn bg-secondary" data-clipboard-target="#insert"></button>
+    </div>
     <div>
         <label for="input-paragraphs">Paragraphs:
             <input type="number" id="input-paragraphs" min="1" max="10" value="3" oninput="tooMany(value)">
@@ -54,5 +57,12 @@
 <footer></footer>
 
 <script src="js/app.js"></script>
+<script src="js/clipboard.min.js"></script>
+
+<script>
+    var btn = document.getElementById('copy');
+    var clipboard = new Clipboard(btn);
+</script>
+
 </body>
 </html>
